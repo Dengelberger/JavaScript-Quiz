@@ -62,7 +62,6 @@ startEl.addEventListener("click", function() {
     var answerBForm = document.getElementById("answerBText");
     var answerCForm = document.getElementById("answerCText");
     var answerDForm = document.getElementById("answerDText");
-    var questionIndex = 1;
 
     if (welcomeEL.style.display = "block") {
         welcomeEL.style.display = "none";
@@ -85,33 +84,29 @@ startEl.addEventListener("click", function() {
 }
 )
 
-// // //loop for rendering each question.
+//loop for rendering each question.
 
-// // //must first hide the welcome information.
+var questionIndex = 1;
 
+//for (var questionIndex.Value < myJavaQuizQuestions.length) {
 
+    var currentQuestion = myJavaQuizQuestions[questionIndex].questionText;
+    var currentAnswerA = myJavaQuizQuestions[questionIndex].answerA;
+    var currentAnswerB = myJavaQuizQuestions[questionIndex].answerB;
+    var currentAnswerC = myJavaQuizQuestions[questionIndex].answerC;
+    var currentAnswerD = myJavaQuizQuestions[questionIndex].answerD;
 
+    document.getElementById("questionText").innerHTML = currentQuestion;
+    document.getElementById("answerAText").innerHTML = currentAnswerA;
+    document.getElementById("answerBText").innerHTML = currentAnswerB;
+    document.getElementById("answerCText").innerHTML = currentAnswerC;
+    document.getElementById("answerDText").innerHTML = currentAnswerD;
 
-// for (var i = 0; i < myJavaQuizQuestions.length; i++) {
-
-//     var currentQuestion = myJavaQuizQuestions[questionIndex].questionText;
-//     var currentAnswers = myJavaQuizQuestions[questionIndex].answers;
-// }
-//     if currentQuestion > 10, {
-//         currentQuestion++;
-//         displayQuestion();
-//     } else {
+   //else {
 //         quizOver();
 // }
 
-// //display question function
-
-// function displayQuestion () {
-
-//  }
-
-// }
-// // //check answer function
+//check answer function
 
 // if(answerBClicked) {
 //     if(myJavaQuizQuestions[currentQuestion][answerBClicked.id] === myJavaQuizQuestions[currentQuestion].correctAnswer) {
@@ -122,7 +117,6 @@ startEl.addEventListener("click", function() {
 
 // }
 
+//timer area.
 
-// // //timer area.
-
-// // //high score area
+//high score area

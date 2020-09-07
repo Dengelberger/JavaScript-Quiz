@@ -14,3 +14,9 @@
 .hidden {
     display: "none";
 }
+form {
+    display: "block";
+    margin-left: 60px;
+    margin-right: 60px;
+    align: "center";
+}
