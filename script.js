@@ -53,7 +53,7 @@ var myJavaQuizQuestions = [
 
 // start quiz button
 var startEl = document.querySelector("#startBtn");    
-var container = document.querySelector(".container");
+var welcomeEL = document.querySelector(".welcomePage");
 
 startEl.addEventListener("click", function() {
             
@@ -64,8 +64,8 @@ startEl.addEventListener("click", function() {
     var answerDForm = document.getElementById("answerDText");
     var questionIndex = 1;
 
-    if (container.style.display = "block") {
-        container.syle.display = "none";
+    if (welcomeEL.style.display = "block") {
+        welcomeEL.style.display = "none";
     }
     if (questionForm.style.display === "none") {
         questionForm.style.display = "block";
@@ -85,9 +85,9 @@ startEl.addEventListener("click", function() {
 }
 )
 
-// //loop for rendering each question.
+// // //loop for rendering each question.
 
-// //must first hide the welcome information.
+// // //must first hide the welcome information.
 
 
 
@@ -125,4 +125,4 @@ startEl.addEventListener("click", function() {
 
 // // //timer area.
 
-// // //high score area.
+// // //high score area
