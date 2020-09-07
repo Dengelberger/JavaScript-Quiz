@@ -7,7 +7,7 @@
     <title>JS Code Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="/style.css" type="style/css">
+    <link rel="stylesheet" href="/JavaScript-Quiz/style.css" type="style/css">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
@@ -17,32 +17,35 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <link rel="javascript" href="/script.js" type="text/javascript">
+    <link rel="javascript" href="/JavaScript-Quiz/script.js" type="text/javascript">
 
 </head>
 
 <body>
     <a href="highScores.html">High Scores</a>
     <div class="hidden">Timer: <span id="timer">90</span></div>
-    <h1>JavaScript Quiz</h1>
-    <p class="container">Welcome to my JavaScript quiz. You will have 90 seconds to complete the six multiple choice
+        <div class="container">
+            <h1>JavaScript Quiz</h1>
+            <br>
+            <p>Welcome to my JavaScript quiz. You will have 90 seconds to complete the six multiple choice
         questions. If you get the answer right, you will advance to the next question. If you get it wrong, you will
         lose ten seconds of your remaining time, and still advance to the next question. Your score will be determined
         by how much time you have remaining after answering the six questions. Good luck!</p>
-    <br>
-    <br>
-    <button id="start">Start Quiz</button>
+            <br>
+            <br>
+            <button id="btn">Start Quiz</button>
+        </div>        
     <form>
         <div class="hidden">
-            <p id="questionText"></p>
-            <button id="answerA">A</button>
-            <p id="answerAText"></p>
-            <button id="answerB">B</button>
-            <p id="answerBText"></p>
-            <button id="answerC">C</button>
-            <p id="answerCText"></p>
-            <button id="answerD">D</button>
-            <p id="answerDText"></p>
+            <p id="questionText" class="hidden"></p>
+            <button id="answerA" class="hidden">A</button>
+            <p id="answerAText" class="hidden"></p>
+            <button id="answerB" class="hidden">B</button>
+            <p id="answerBText" class="hidden"></p>
+            <button id="answerC" class="hidden">C</button>
+            <p id="answerCText" class="hidden"></p>
+            <button id="answerD" class="hidden">D</button>
+            <p id="answerDText" class="hidden"></p>
         </div>
     </form>
 </body>

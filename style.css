@@ -1,7 +1,16 @@
 .container {
-    margin: 40px;
+    margin: 60px;
+    align: "center";
+    display: "block";
+}
+.h1 {
+    align-content: "center";
+}
+
+.container p {
+    align-content: "center";
 }
 
 .hidden {
-    display: none;
+    display: "none";
 }
