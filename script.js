@@ -52,14 +52,13 @@
 // ];
 
 // start quiz button
-var startEl = document.querySelector("#btn");    
+var startEl = document.querySelector("#startBtn");    
+var container = document.querySelector(".container");
 
-console.log(startEl);
-    
-    // var container = document.querySelector(".container");
-
-    // startEl.addEventListener("click", function();
-    // console.log("CLICKED!");
+startEl.addEventListener("click", function() {
+        console.log("CLICK!!");
+    })
+   
 
 //    function showQuiz() {
      
