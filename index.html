@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Code Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css" type="style/css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel="javascript" href="/script.js" type="text/javascript">
+
+</head>
+
+<body>
+    <a href="highScores.html">High Scores</a>
+    <div class="hidden">Timer: <span id="timer">90</span></div>
+    <h1>JavaScript Quiz</h1>
+    <p class="container">Welcome to my JavaScript quiz. You will have 90 seconds to complete the six multiple choice
+        questions. If you get the answer right, you will advance to the next question. If you get it wrong, you will
+        lose ten seconds of your remaining time, and still advance to the next question. Your score will be determined
+        by how much time you have remaining after answering the six questions. Good luck!</p>
+    <br>
+    <br>
+    <button id="start">Start Quiz</button>
+    <form>
+        <div class="hidden">
+            <p id="questionText"></p>
+            <button id="answerA">A</button>
+            <p id="answerAText"></p>
+            <button id="answerB">B</button>
+            <p id="answerBText"></p>
+            <button id="answerC">C</button>
+            <p id="answerCText"></p>
+            <button id="answerD">D</button>
+            <p id="answerDText"></p>
+        </div>
+    </form>
+</body>
+
+</html>
