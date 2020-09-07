@@ -1,4 +1,4 @@
-//arrays for questions and answer choices as well as correct answers.
+//ARRAY OF OBJECTS FOR QUESTIONS, CHOICES, AND CORRECT ANSWERS.
 
 var myJavaQuizQuestions = [
     {
@@ -51,7 +51,8 @@ var myJavaQuizQuestions = [
     }
 ];
 
-// start quiz button
+// START QUIZ BUTTON
+
 var startEl = document.querySelector("#startBtn");    
 var welcomeEL = document.querySelector(".welcomePage");
 
@@ -66,6 +67,8 @@ startEl.addEventListener("click", function() {
     if (welcomeEL.style.display = "block") {
         welcomeEL.style.display = "none";
     }
+ //THIS PART IS TO BRING BACK THE QUESTION FROM HIDING, BUT IT ISN'T HIDDEN TO START WITH. NEEDS TO BE FIXED.
+
     if (questionForm.style.display === "none") {
         questionForm.style.display = "block";
     }
@@ -84,7 +87,7 @@ startEl.addEventListener("click", function() {
 }
 )
 
-//loop for rendering each question.
+//RENDERING OF EACH QUESTION. RIGHT NOW, THE QUESTION INDEX NEEDS TO BE MANUALLY CHANGED. THIS NEEDS TO BE FIXED.
 
 var questionIndex = 1;
 
@@ -108,7 +111,23 @@ var questionIndex = 1;
 
 //check answer function
 
-// if(answerBClicked) {
+// IF ONE OF THE CHOICES IS CLICKED, COMPARE THE CLICKED CHOICE TO THE CORRECT ANSWER.
+
+// IF THE CLICKED CHOICE MATCHES THE CORRECT ANSWER, RETURN "CORRECT!", ADD ONE TO THE CORRECT ANSWER TALLY, THEN ADD ONE TO THE QUESTION INDEX, AND RETURN TO THE TOP OF THE LOOP.
+
+// IF THE CLICKED CHOICE DOES NOT MATCH THE CORRECT ANSWER, RETURN "WRONG! YOU LOST 10 SECONDS OF THE REMAINING TIME.", DEDUCT 10 SECONDS FROM THE TIMER, ADD ONE TO THE QUESTION INDEX, AND RETURN TO THE TOP OF THE LOOP.
+
+// QUIZ OVER FUNCTION
+
+//IF THE QUESTION INDEX GOES PAST THE ARRAY LENGTH, THE GAME IS OVER. 
+
+//RECORD THE REMAINING TIME IN THE SCORE AREA.  POSSIBLY MULTIPLY IT BY THE NUMBER OF CORRECT ANSWERS, OR CORRECT ANSWER TALLY.
+
+//ALLOW PLAYER TO ENTER INITIALS AND RECORD THAT ON THE HIGH SCORES PAGE NEXT TO THE SCORE.
+
+//if(answerAClicked || answerBClicked || answerCClicked || answerDClicked) {
+
+  //  if(answerBClicked) {
 //     if(myJavaQuizQuestions[currentQuestion][answerBClicked.id] === myJavaQuizQuestions[currentQuestion].correctAnswer) {
 //         //correct answer function
 //     } else {
