@@ -52,7 +52,8 @@ var myJavaQuizQuestions = [
 ];
 
 // START QUIZ BUTTON
-
+var secondsLeft = 90;
+var questionIndex = 0;
 var startEl = document.querySelector("#startBtn");    
 var welcomeEL = document.querySelector(".welcomePage");
 
@@ -89,7 +90,7 @@ questionBox.addEventListener("click", function(event) {
     }
 });
 
-var questionIndex = 0;
+
 
 var correctAnswerTally = 0;
 
@@ -113,7 +114,7 @@ function newQuestion() {
 
 var timerEl = document.querySelector("#timer");
 
-var secondsLeft = 90;
+
 
 function setTime() {
     var timerInterval = setInterval(function() {
@@ -122,9 +123,10 @@ function setTime() {
   
       if(secondsLeft === 0 || myJavaQuizQuestions.length === questionIndex) {
         clearInterval(timerInterval);
-        alert("Quiz is ended.");
+        
+      localStorage.setItem("currentUserScore", secondsLeft);
+      window.location.href="submit.html";
       }
-  
     }, 1000);
   };
 
