@@ -1,22 +1,43 @@
 .welcomePage {
-    margin: 60px;
-    align: "center";
-    display: "block";
+    align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 24px;
 }
+
 .h1 {
-    align-content: "center";
+    align-content: center;
 }
 
 .welcomePage p {
-    align-content: "center";
+    text-align: left;
 }
 
-.hidden {
-    display: "none";
-}
-form {
-    display: "block";
+#questionBox {
+    display: none;
     margin-left: 60px;
     margin-right: 60px;
-    align: "center";
+    align: center;
+}
+
+#questionText {
+    text-align: left;
+}
+
+#answerAText {
+    text-align: left;
+}
+
+#answerBText {
+    text-align: left;
+}
+
+#answerCText {
+    text-align: left;
+}
+
+#answerDText {
+    text-align: left;
 }

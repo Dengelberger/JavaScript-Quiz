@@ -7,55 +7,56 @@
     <title>JS Code Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="style/css">
-    
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
     <a href="highScores.html">High Scores</a>
     <div class="hidden">Timer: <span id="timer">90</span></div>
-        <div class="welcomePage">
-            <h1>JavaScript Quiz</h1>
-            <br>
-            <p>Welcome to my JavaScript quiz. You will have 90 seconds to complete the six multiple choice
-        questions. If you get the answer right, you will advance to the next question. If you get it wrong, you will
-        lose ten seconds of your remaining time, and still advance to the next question. Your score will be determined
-        by how much time you have remaining after answering the six questions. Good luck!</p>
-            <br>
-            <br>
-            <button id="startBtn">Start Quiz</button>
-        </div>        
-    <form>
-        <div class="hidden" class="row">
-            <p id="questionText" class="hidden" class="col-sm-12">Question Here</p>
+    <div class="welcomePage">
+        <h1>JavaScript Quiz</h1>
+        <br>
+        <p>Welcome to my JavaScript quiz. You will have 90 seconds to complete the six multiple choice
+            questions. If you get the answer right, you will advance to the next question. If you get it wrong, you will
+            lose ten seconds of your remaining time, and still advance to the next question. Your score will be
+            determined
+            by how much time you have remaining after answering the six questions. Good luck!</p>
+        <br>
+        <br>
+        <button id="startBtn">Start Quiz</button>
+    </div>
+    <form id="questionBox">
+        <div class="row">
+            <p id="questionText" class="col-sm-12">Question Here</p>
         </div>
         <div class="row">
-            <button id="answerA" class="hidden" class="col-sm-3">A</button>
-            <p id="answerAText" class="hidden" class="col-sm-9">Answer A Here</p>
+            <button id="answerA" class="col-sm-3">A</button>
+            <p id="answerAText" class="col-sm-9">Answer A Here</p>
         </div>
         <div class="row">
-            <button id="answerB" class="hidden" class="col-sm-3">B</button>
-            <p id="answerBText" class="hidden" class="col-sm-6">Answer B Here</p>
+            <button id="answerB" class="col-sm-3">B</button>
+            <p id="answerBText" class="col-sm-6">Answer B Here</p>
         </div>
         <div class="row">
-            <button id="answerC" class="hidden" class="col-sm-3">C</button>
-            <p id="answerCText" class="hidden" class="col-sm-9">Answer C Here</p>
+            <button id="answerC" class="col-sm-3">C</button>
+            <p id="answerCText" class="col-sm-9">Answer C Here</p>
         </div>
-        <div class="row">   
-            <button id="answerD" class="hidden" class="col-sm=3">D</button>
-            <p id="answerDText" class="hidden" class="col-sm-9">Answer D Here</p>
+        <div class="row">
+            <button id="answerD" class="col-sm=3">D</button>
+            <p id="answerDText" class="col-sm-9">Answer D Here</p>
         </div>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
     <script src="script.js" type="text/javascript"></script>
 
 </body>

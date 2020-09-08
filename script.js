@@ -57,8 +57,8 @@ var startEl = document.querySelector("#startBtn");
 var welcomeEL = document.querySelector(".welcomePage");
 
 startEl.addEventListener("click", function() {
-            
-    var questionForm = document.getElementById("questionText");
+    var questionBox = document.getElementById("questionBox");       
+    var questionText = document.getElementById("questionText");
     var answerAForm = document.getElementById("answerAText");
     var answerBForm = document.getElementById("answerBText");
     var answerCForm = document.getElementById("answerCText");
@@ -69,27 +69,17 @@ startEl.addEventListener("click", function() {
     }
  //THIS PART IS TO BRING BACK THE QUESTION FROM HIDING, BUT IT ISN'T HIDDEN TO START WITH. NEEDS TO BE FIXED.
 
-    if (questionForm.style.display === "none") {
-        questionForm.style.display = "block";
-    }
-    if (answerAForm.style.display === "none") {
-        answerAForm.style.display = "block";
-    }
-    if (answerBForm.style.display === "none") {
-        answerBForm.style.display = "block";
-    }
-    if (answerCForm.style.display === "none") {
-        answerCForm.style.display = "block";
-    }
-    if (answerDForm.style.display === "none") {
-        answerDForm.style.display = "block";
-    }
+ //   if (questionBox.style.display === "none") {
+        questionBox.style.display = "block";
+ //   }
 }
 )
 
 //RENDERING OF EACH QUESTION. RIGHT NOW, THE QUESTION INDEX NEEDS TO BE MANUALLY CHANGED. THIS NEEDS TO BE FIXED.
 
-var questionIndex = 1;
+var questionIndex = 0;
+
+var correctAnswerTally = 0;
 
 //for (var questionIndex.Value < myJavaQuizQuestions.length) {
 
@@ -105,37 +95,50 @@ var questionIndex = 1;
     document.getElementById("answerCText").innerHTML = currentAnswerC;
     document.getElementById("answerDText").innerHTML = currentAnswerD;
 
-   //else {
-//         quizOver();
+   //else { //THIS STOPS THE QUIZ AND TAKES THE USER TO THE SCORE AREA.
+
+   //         quizOver();
 // }
 
 //check answer function
 
-// IF ONE OF THE CHOICES IS CLICKED, COMPARE THE CLICKED CHOICE TO THE CORRECT ANSWER.
-
-// IF THE CLICKED CHOICE MATCHES THE CORRECT ANSWER, RETURN "CORRECT!", ADD ONE TO THE CORRECT ANSWER TALLY, THEN ADD ONE TO THE QUESTION INDEX, AND RETURN TO THE TOP OF THE LOOP.
-
-// IF THE CLICKED CHOICE DOES NOT MATCH THE CORRECT ANSWER, RETURN "WRONG! YOU LOST 10 SECONDS OF THE REMAINING TIME.", DEDUCT 10 SECONDS FROM THE TIMER, ADD ONE TO THE QUESTION INDEX, AND RETURN TO THE TOP OF THE LOOP.
-
-// QUIZ OVER FUNCTION
-
-//IF THE QUESTION INDEX GOES PAST THE ARRAY LENGTH, THE GAME IS OVER. 
-
-//RECORD THE REMAINING TIME IN THE SCORE AREA.  POSSIBLY MULTIPLY IT BY THE NUMBER OF CORRECT ANSWERS, OR CORRECT ANSWER TALLY.
-
-//ALLOW PLAYER TO ENTER INITIALS AND RECORD THAT ON THE HIGH SCORES PAGE NEXT TO THE SCORE.
+    // IF ONE OF THE CHOICES IS CLICKED, 
 
 //if(answerAClicked || answerBClicked || answerCClicked || answerDClicked) {
+    
+    // COMPARE THE CLICKED CHOICE TO THE CORRECT ANSWER.
 
-  //  if(answerBClicked) {
-//     if(myJavaQuizQuestions[currentQuestion][answerBClicked.id] === myJavaQuizQuestions[currentQuestion].correctAnswer) {
+    //var correctAnswerEl = myJavaQuizQuestions[questionIndex].correctAnswer;
+
+        //IF CURRENTANSWERA IS CLICKED, THEN IS CORRECTANSWEREL = "A"? IF SO, CORRECT! IF NOT, WRONG!
+
+        //  if(answerAClicked) {
+//     if(myJavaQuizQuestions[currentQuestion][answerAClicked.id] === myJavaQuizQuestions[currentQuestion].correctAnswer) {
 //         //correct answer function
 //     } else {
 //         //wrong answer function, including taking time off timer.
 //     }
-
 // }
 
-//timer area.
+        //IF CURRENTANSWERB IS CLICKED, THEN IS CORRECTANSWEREL = "B"? IF SO, CORRECT! IF NOT, WRONG!
 
-//high score area
+        //IF CURRENTANSWERC IS CLICKED, THEN IS CORRECTANSWEREL = "C"? IF SO, CORRECT! IF NOT, WRONG!
+
+        //IF CURRENTANSWERD IS CLICKED, THEN IS CORRECTANSWEREL = "D"? IF SO, CORRECT! IF NOT, WRONG!
+
+    
+    // IF THE CLICKED CHOICE MATCHES THE CORRECT ANSWER, RETURN "CORRECT!", ADD ONE TO THE CORRECT ANSWER TALLY, THEN ADD ONE TO THE QUESTION INDEX, AND RETURN TO THE TOP OF THE LOOP.
+
+    // IF THE CLICKED CHOICE DOES NOT MATCH THE CORRECT ANSWER, RETURN "WRONG! YOU LOST 10 SECONDS OF THE REMAINING TIME.", DEDUCT 10 SECONDS FROM THE TIMER, ADD ONE TO THE QUESTION INDEX, AND RETURN TO THE TOP OF THE LOOP.
+
+    //IF THE QUESTION INDEX GOES PAST THE ARRAY LENGTH, THE GAME IS OVER. 
+
+//TIMER AREA
+
+// GAME OVER AREA
+
+// QUIZ OVER FUNCTION
+
+//RECORD THE REMAINING TIME IN THE SCORE AREA.  POSSIBLY MULTIPLY IT BY THE NUMBER OF CORRECT ANSWERS, OR CORRECT ANSWER TALLY.
+
+//ALLOW PLAYER TO ENTER INITIALS AND RECORD THAT ON THE HIGH SCORES PAGE NEXT TO THE SCORE
