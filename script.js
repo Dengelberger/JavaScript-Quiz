@@ -58,21 +58,15 @@ var welcomeEL = document.querySelector(".welcomePage");
 
 startEl.addEventListener("click", function() {
     var questionBox = document.getElementById("questionBox");       
-    var questionText = document.getElementById("questionText");
-    var answerAForm = document.getElementById("answerAText");
-    var answerBForm = document.getElementById("answerBText");
-    var answerCForm = document.getElementById("answerCText");
-    var answerDForm = document.getElementById("answerDText");
 
+    // THIS PART IS TO HIDE THE WELCOME ON THE BEGINNING ONCE THE START BUTTON IS CLICKED.
     if (welcomeEL.style.display = "block") {
         welcomeEL.style.display = "none";
     }
- //THIS PART IS TO BRING BACK THE QUESTION FROM HIDING, BUT IT ISN'T HIDDEN TO START WITH. NEEDS TO BE FIXED.
+ //THIS PART IS TO BRING BACK THE QUESTION FROM HIDING.
 
- //   if (questionBox.style.display === "none") {
         questionBox.style.display = "block";
- //   }
-}
+    }
 )
 
 //RENDERING OF EACH QUESTION. RIGHT NOW, THE QUESTION INDEX NEEDS TO BE MANUALLY CHANGED. THIS NEEDS TO BE FIXED.
@@ -95,7 +89,7 @@ var correctAnswerTally = 0;
     document.getElementById("answerCText").innerHTML = currentAnswerC;
     document.getElementById("answerDText").innerHTML = currentAnswerD;
 
-   //else { //THIS STOPS THE QUIZ AND TAKES THE USER TO THE SCORE AREA.
+//} //else { //THIS STOPS THE QUIZ AND TAKES THE USER TO THE SCORE AREA.
 
    //         quizOver();
 // }

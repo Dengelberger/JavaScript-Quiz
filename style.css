@@ -1,5 +1,4 @@
 .welcomePage {
-    align: center;
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 60px;
@@ -7,37 +6,68 @@
     font-size: 24px;
 }
 
-.h1 {
-    align-content: center;
+.welcomePage h1 {
+    text-align: center;
 }
 
 .welcomePage p {
     text-align: left;
 }
 
-#questionBox {
-    display: none;
-    margin-left: 60px;
-    margin-right: 60px;
-    align: center;
+#timer {
+    text-align: right;
+    font-size: 24px;
 }
 
+#start-button {
+    align-self: center;
+}
+
+#questionBox {
+    display: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 60px;
+    margin-right: 60px;
+    font-size: 24px;
+}
 #questionText {
     text-align: left;
+    margin-bottom: 20px;
 }
 
 #answerAText {
     text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 #answerBText {
     text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 #answerCText {
     text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 #answerDText {
     text-align: left;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+#answerA {
+    margin-bottom: 20px;
+}
+#answerB {
+    margin-bottom: 20px;
+}
+#answerC {
+    margin-bottom: 20px;
+}
+#answerD {
+    margin-bottom: 20px;
 }
