@@ -54,16 +54,17 @@ var myJavaQuizQuestions = [
 // START QUIZ BUTTON
 var secondsLeft = 90;
 var questionIndex = 0;
-var startEl = document.querySelector("#startBtn");    
+var startEl = document.querySelector("#startBtn");
 var welcomeEL = document.querySelector(".welcomePage");
 var timeDispEl = document.querySelector("#time");
 var highScoreNavEl = document.querySelector("#highScoresNav")
 var revealEl = document.querySelector("#reveal");
+var isPaused = false;
 
-startEl.addEventListener("click", function(event) {
+startEl.addEventListener("click", function (event) {
     event.preventDefault();
     setTime();
-    var questionBox = document.getElementById("questionBox");       
+    var questionBox = document.getElementById("questionBox");
 
     // THIS PART IS TO HIDE THE WELCOME ON THE BEGINNING ONCE THE START BUTTON IS CLICKED.
     if (welcomeEL.style.display = "block") {
@@ -73,27 +74,29 @@ startEl.addEventListener("click", function(event) {
         highScoreNavEl.style.display = "none";
     }
 
- //THIS PART IS TO BRING THE QUESTION BOX FROM HIDING.
+    //THIS PART IS TO BRING THE QUESTION BOX FROM HIDING.
 
-        questionBox.style.display = "block";
-        timeDispEl.style.display = "block";
-        newQuestion();
-    }
+    questionBox.style.display = "block";
+    timeDispEl.style.display = "block";
+    newQuestion();
+}
 )
 //EVENT LISTENER FOR EACH QUESTION.
 
-questionBox.addEventListener("click", function(event) {
+questionBox.addEventListener("click", function (event) {
     event.preventDefault();
-    if(event.target.matches("button")) {
-        if(event.target.textContent == myJavaQuizQuestions[questionIndex].correctAnswer) {
+    if (event.target.matches("button")) {
+        if (event.target.textContent == myJavaQuizQuestions[questionIndex].correctAnswer) {
+            pauseFor2();
             revealEl.style.display = "block";
-            revealEl.textContent = "Correct !"
+            revealEl.textContent = "Correct !";
             questionIndex++;
             correctAnswerTally++;
             newQuestion();
         } else {
+            pauseFor2();
             revealEl.style.display = "block";
-            revealEl.textContent = "Wrong !"
+            revealEl.textContent = "Wrong !";
             questionIndex++;
             newQuestion();
             secondsLeft = secondsLeft - 10;
@@ -102,6 +105,12 @@ questionBox.addEventListener("click", function(event) {
     }
 });
 
+function pauseFor2() {
+    isPaused = true;
+    setTimeout(function() {
+        isPaused = false;
+ }, 2000);
+ }
 
 
 var correctAnswerTally = 0;
@@ -120,8 +129,8 @@ function newQuestion() {
     currentAnswerB.textContent = myJavaQuizQuestions[questionIndex].answerB;
     currentAnswerC.textContent = myJavaQuizQuestions[questionIndex].answerC;
     currentAnswerD.textContent = myJavaQuizQuestions[questionIndex].answerD;
-  
-} 
+
+}
 
 //TIMER AREA
 
@@ -130,18 +139,20 @@ var timerEl = document.querySelector("#timer");
 
 
 function setTime() {
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timerEl.textContent = secondsLeft;
-  
-      if(secondsLeft === 0 || myJavaQuizQuestions.length === questionIndex) {
-        clearInterval(timerInterval);
-        
-      localStorage.setItem("currentUserScore", secondsLeft);
-      window.location.href="submit.html";
-      }
-    }, 1000);
-  };
+    if (!isPaused) {
+        var timerInterval = setInterval(function () {
+            secondsLeft--;
+            timerEl.textContent = secondsLeft;
+
+            if (secondsLeft === 0 || myJavaQuizQuestions.length === questionIndex) {
+                clearInterval(timerInterval);
+
+                localStorage.setItem("currentUserScore", secondsLeft);
+                window.location.href = "submit.html";
+            }
+        }, 1000);
+    }
+};
 
 
 //RECORD THE REMAINING TIME IN THE SCORE AREA.  POSSIBLY MULTIPLY IT BY THE NUMBER OF CORRECT ANSWERS, OR CORRECT ANSWER TALLY.

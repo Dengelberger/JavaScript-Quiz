@@ -98,3 +98,21 @@ body {
     text-align: center;
     font-size: 40px;
 }
+#submitBox {
+    background-color: lavender;
+    padding: 40px;
+    margin: 140px;
+    font-size: 24px; 
+}
+#please h1 {
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+#highScoreReveal {
+    background-color: lavender;
+    padding: 40px;
+    margin: 140px;
+    font-size: 24px;
+    text-align: center; 
+}
