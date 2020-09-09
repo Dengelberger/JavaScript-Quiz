@@ -1,4 +1,9 @@
+body {
+    background-color: teal;
+}
+
 .welcomePage {
+    background-color: lavender;
     padding-left: 10px;
     padding-right: 10px;
     margin-left: 60px;
@@ -14,8 +19,17 @@
     text-align: left;
 }
 
+#highScoresNav {
+    display: block;
+    text-align: left;
+    padding-left: 30px;
+    font-size: 24px;
+}
 #time {
+    color: lightblue;
+    display: none;
     text-align: right;
+    padding-right: 30px;
     font-size: 24px;
 }
 
@@ -25,14 +39,23 @@
 
 #questionBox {
     display: none;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-left: 60px;
-    margin-right: 60px;
+    background-color: lavender;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: 140px;
+    margin-right: 140px;
     font-size: 24px;
 }
+#row {
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #questionText {
     text-align: left;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
@@ -70,4 +93,8 @@
 }
 #answerD {
     margin-bottom: 20px;
+}
+#reveal {
+    text-align: center;
+    font-size: 40px;
 }

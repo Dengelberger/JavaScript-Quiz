@@ -56,6 +56,9 @@ var secondsLeft = 90;
 var questionIndex = 0;
 var startEl = document.querySelector("#startBtn");    
 var welcomeEL = document.querySelector(".welcomePage");
+var timeDispEl = document.querySelector("#time");
+var highScoreNavEl = document.querySelector("#highScoresNav")
+var revealEl = document.querySelector("#reveal");
 
 startEl.addEventListener("click", function(event) {
     event.preventDefault();
@@ -66,9 +69,14 @@ startEl.addEventListener("click", function(event) {
     if (welcomeEL.style.display = "block") {
         welcomeEL.style.display = "none";
     }
- //THIS PART IS TO BRING BACK THE QUESTION FROM HIDING.
+    if (highScoreNavEl.style.display = "block") {
+        highScoreNavEl.style.display = "none";
+    }
+
+ //THIS PART IS TO BRING THE QUESTION BOX FROM HIDING.
 
         questionBox.style.display = "block";
+        timeDispEl.style.display = "block";
         newQuestion();
     }
 )
@@ -78,10 +86,14 @@ questionBox.addEventListener("click", function(event) {
     event.preventDefault();
     if(event.target.matches("button")) {
         if(event.target.textContent == myJavaQuizQuestions[questionIndex].correctAnswer) {
+            revealEl.style.display = "block";
+            revealEl.textContent = "Correct !"
             questionIndex++;
             correctAnswerTally++;
             newQuestion();
         } else {
+            revealEl.style.display = "block";
+            revealEl.textContent = "Wrong !"
             questionIndex++;
             newQuestion();
             secondsLeft = secondsLeft - 10;
@@ -102,6 +114,7 @@ var currentAnswerD = document.getElementById("answerDText")
 
 function newQuestion() {
 
+    revealEl.style.display = "none";
     currentQuestion.textContent = myJavaQuizQuestions[questionIndex].questionText;
     currentAnswerA.textContent = myJavaQuizQuestions[questionIndex].answerA;
     currentAnswerB.textContent = myJavaQuizQuestions[questionIndex].answerB;
