@@ -87,23 +87,29 @@ questionBox.addEventListener("click", function (event) {
     event.preventDefault();
     if (event.target.matches("button")) {
         if (event.target.textContent == myJavaQuizQuestions[questionIndex].correctAnswer) {
-            revealEl.text = "Correct!";
+            revealEl.textContent = "Correct!";
             revealEl.style.display = "block";
-            questionIndex++;
+            myFunction();
+            // questionIndex++;
             correctAnswerTally++;
-            newQuestion();
+            // newQuestion();
         } else {
-            revealEl.text = "Wrong!";
-            revealEl.style.display = "block";    
-            questionIndex++;
-            newQuestion();
+            revealEl.textContent = "Wrong!";
+            revealEl.style.display = "block";
+            myFunction();    
+            // questionIndex++;
+            // newQuestion();
             secondsLeft = secondsLeft - 10;
         }
     }
 });
 function myFunction() {
-    setTimeout(function(){ 
-        revealEl.style.display = "none"; }, 3000);
+    setTimeout(function() {
+        revealEl.style.display = "none";
+        questionIndex++;
+        newQuestion();
+     }, 2000);
+     
   };
 
 var correctAnswerTally = 0;
@@ -114,7 +120,7 @@ var currentAnswerC = document.getElementById("answerCText")
 var currentAnswerD = document.getElementById("answerDText")
 
 function newQuestion() {
-    // revealEl.text = "";
+    
     currentQuestion.textContent = myJavaQuizQuestions[questionIndex].questionText;
     currentAnswerA.textContent = myJavaQuizQuestions[questionIndex].answerA;
     currentAnswerB.textContent = myJavaQuizQuestions[questionIndex].answerB;
