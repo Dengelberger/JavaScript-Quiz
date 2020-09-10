@@ -2,7 +2,7 @@
 
 var myJavaQuizQuestions = [
     {
-        questionText: "The purpose of JavaScript is to..",
+        questionText: "1. The purpose of JavaScript is to..",
         answerA: "format the style of the web page.",
         answerB: "run the functions and activities.",
         answerC: "provide the framework for the web page.",
@@ -10,7 +10,7 @@ var myJavaQuizQuestions = [
         correctAnswer: "B",
     },
     {
-        questionText: "Which of these will let the program know if a button is clicked by a user?",
+        questionText: "2. Which of these will let the program know if a button is clicked by a user?",
         answerA: "an Event Listener",
         answerB: "a loop statement",
         answerC: "a counter",
@@ -18,7 +18,7 @@ var myJavaQuizQuestions = [
         correctAnswer: "A",
     },
     {
-        questionText: "What does an array do?",
+        questionText: "3. What does an array do?",
         answerA: "runs a function when it is called for",
         answerB: "formats html for font styling",
         answerC: "store a list of elements such as strings or values",
@@ -26,7 +26,7 @@ var myJavaQuizQuestions = [
         correctAnswer: "C",
     },
     {
-        questionText: "Which of the following can be used to separate a block of data into smaller elements?",
+        questionText: "4. Which of the following can be used to separate a block of data into smaller elements?",
         answerA: "JSON.stringify()",
         answerB: "JSON.parse()",
         answerC: "getElementById",
@@ -34,7 +34,7 @@ var myJavaQuizQuestions = [
         correctAnswer: "B",
     },
     {
-        questionText: "Where can you include javascript code?",
+        questionText: "5. Where can you include javascript code?",
         answerA: "only on the displayed web page",
         answerB: "in a .js file",
         answerC: "in the .html file",
@@ -42,7 +42,7 @@ var myJavaQuizQuestions = [
         correctAnswer: "D",
     },
     {
-        questionText: "Why is it important for coders to learn JavaScript?",
+        questionText: "6. Why is it important for coders to learn JavaScript?",
         answerA: "It is a commonly used programming language.",
         answerB: "It is the only programming language available.",
         answerC: "It isn't important for coders to learn JavaScript.",
@@ -59,7 +59,7 @@ var welcomeEL = document.querySelector(".welcomePage");
 var timeDispEl = document.querySelector("#time");
 var highScoreNavEl = document.querySelector("#highScoresNav")
 var revealEl = document.querySelector("#reveal");
-var isPaused = false;
+//var isPaused = false;
 
 startEl.addEventListener("click", function (event) {
     event.preventDefault();
@@ -87,34 +87,22 @@ questionBox.addEventListener("click", function (event) {
     event.preventDefault();
     if (event.target.matches("button")) {
         if (event.target.textContent == myJavaQuizQuestions[questionIndex].correctAnswer) {
-            pauseFor2();
+            revealEl.text = "Correct!";
             revealEl.style.display = "block";
-            revealEl.textContent = "Correct !";
             questionIndex++;
             correctAnswerTally++;
             newQuestion();
         } else {
-            pauseFor2();
-            revealEl.style.display = "block";
-            revealEl.textContent = "Wrong !";
+            revealEl.text = "Wrong!";
+            revealEl.style.display = "block";    
             questionIndex++;
             newQuestion();
             secondsLeft = secondsLeft - 10;
-
         }
     }
 });
 
-function pauseFor2() {
-    isPaused = true;
-    setTimeout(function() {
-        isPaused = false;
- }, 2000);
- }
-
-
 var correctAnswerTally = 0;
-
 var currentQuestion = document.getElementById("questionText")
 var currentAnswerA = document.getElementById("answerAText")
 var currentAnswerB = document.getElementById("answerBText")
@@ -122,14 +110,13 @@ var currentAnswerC = document.getElementById("answerCText")
 var currentAnswerD = document.getElementById("answerDText")
 
 function newQuestion() {
-
-    revealEl.style.display = "none";
+    // revealEl.text = "";
     currentQuestion.textContent = myJavaQuizQuestions[questionIndex].questionText;
     currentAnswerA.textContent = myJavaQuizQuestions[questionIndex].answerA;
     currentAnswerB.textContent = myJavaQuizQuestions[questionIndex].answerB;
     currentAnswerC.textContent = myJavaQuizQuestions[questionIndex].answerC;
     currentAnswerD.textContent = myJavaQuizQuestions[questionIndex].answerD;
-
+    
 }
 
 //TIMER AREA
@@ -139,7 +126,6 @@ var timerEl = document.querySelector("#timer");
 
 
 function setTime() {
-    if (!isPaused) {
         var timerInterval = setInterval(function () {
             secondsLeft--;
             timerEl.textContent = secondsLeft;
@@ -151,8 +137,7 @@ function setTime() {
                 window.location.href = "submit.html";
             }
         }, 1000);
-    }
-};
+    };
 
 
 //RECORD THE REMAINING TIME IN THE SCORE AREA.  POSSIBLY MULTIPLY IT BY THE NUMBER OF CORRECT ANSWERS, OR CORRECT ANSWER TALLY.
