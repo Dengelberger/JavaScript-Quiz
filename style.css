@@ -105,22 +105,40 @@ body {
     margin: 140px;
     font-size: 24px; 
 }
+#userScoreArea {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+#userScore {
+    padding-left: 30px;
+}
+#userInitialArea {
+    margin-left: 300px;
+    margin-right: 300px;
+}
 #please h1 {
     text-align: center;
     margin-bottom: 20px;
-
 }
+.bigButton {
+    transform: translateX(-50%); 
+    margin-left: 50%;
+} 
+
 #highScoreReveal {
     background-color: lavender;
     padding: 40px;
-    margin: 140px;
+    margin-top: 140px;
+    margin-bottom: 140px;
+    margin-left: 300px;
+    margin-right: 300px;
     font-size: 24px;
     text-align: center; 
 }
 #highScoreTable {
     margin-left: 160px;
     margin-right: 100px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
