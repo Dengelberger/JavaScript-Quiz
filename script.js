@@ -101,6 +101,10 @@ questionBox.addEventListener("click", function (event) {
         }
     }
 });
+function myFunction() {
+    setTimeout(function(){ 
+        revealEl.style.display = "none"; }, 3000);
+  };
 
 var correctAnswerTally = 0;
 var currentQuestion = document.getElementById("questionText")
